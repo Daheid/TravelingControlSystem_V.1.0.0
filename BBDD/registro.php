@@ -15,6 +15,19 @@
 
     $query = "INSERT INTO usuarios(id, password, tipo_usuario, cedula, telefono, parada, email, nombre, apellido) VALUES ('$id','$password_db','$tipo_usuario','$cedula','$telefono','$parada','$email','$nombre','$apellido')";
 
+    //Verificacion de cedula
+
+    $cedulaV = mysqli_query($mysqli, "SELECT * FROM usuarios WHERE cedula='$cedula'");
+
+    if(mysqli_num_rows($cedulaV) > 0){
+        echo '
+            <script>
+                alert("Esta cedula ya le pertenece a un usuario diferente.");
+                window.location = "../administrador/registro/php/registro.php";
+            </script>
+        ';
+    }
+
     $ejecutar = mysqli_query($mysqli, $query);
 
     if($ejecutar){

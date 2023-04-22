@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <link rel="shortcut icon" type="image/png" href="../../logo/logo.ico"/>
+    <title>Login</title>
 </head>
 <body>
     <div class="login-box">
@@ -26,6 +27,7 @@
 
         </form>
     </div>
+    <!--Javascript-->
     <script src="script.js"></script>
 </body>
 </html>

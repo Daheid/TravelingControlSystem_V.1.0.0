@@ -1,3 +1,21 @@
+<?php
+//Verificacion de sesion en cuenta
+session_start();
+if(!isset($_SESSION['id'])){
+	
+	echo '
+	<script>
+		alert("inicie sesion");
+		window.location = "../../../login/php/index.php";
+	</script>
+	';
+
+	
+	session_destroy();
+	die();
+};
+
+?>
 <!DOCTYPE html>
 <html>
 <head>

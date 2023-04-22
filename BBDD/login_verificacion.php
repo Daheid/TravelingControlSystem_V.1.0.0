@@ -1,7 +1,7 @@
 <?php
-	
+
 	require "conexion_BBDD.php";
-	
+
 	session_start();
 	
 	if($_POST){
@@ -23,7 +23,7 @@
 			if($password_bd == $pass_c){
 				
 				$_SESSION['id'] = $row['id'];
-				$_SESSION['nombre'] = $row['nombre'];
+				$_SESSION['password'] = $row['password'];
 				$_SESSION['tipo_usuario'] = $row['tipo_usuario'];
 				$tipo_usuario_validar = $_SESSION['tipo_usuario'];
 				
@@ -34,14 +34,18 @@
 				};
 				
 			} else {
-			
-			echo "La contraseña no coincide";
-			
+				echo '<script>
+						alert("Contraseña Incorrecta");
+						window.location = "../login/php/index.php";
+					</script>;';
 			}
 			
 			
 			} else {
-			echo "NO existe usuario";
+				echo '<script>
+						alert("Usuario incorrecto");
+						window.location = "../login/php/index.php";
+					</script>;';
 		}
 		
 		
