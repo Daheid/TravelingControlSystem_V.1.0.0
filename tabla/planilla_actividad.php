@@ -50,7 +50,7 @@
 
     <!--Planilla actividad-->
 <div class="general">
-	<form id="formulario" class="form-register" action="../../../BBDD/planilla_actividad.php" method="POST">
+	<form id="formulario" class="form-register" action="../BBDD/planilla_actividad.php" method="POST">
 		<h4>Envio de Unidades</h4>
 
 		<input class="controls" type="text" name="unidad" id="nombre" placeholder="Numero de unidad" required>
@@ -94,7 +94,7 @@
 
 	<!--ultimos registros-->
 	<?php
-    include("../../../BBDD/conexion_BBDD.php");
+    include("../BBDD/conexion_BBDD.php");
 
     $usuarios = "SELECT * FROM planilla_actividad";
 

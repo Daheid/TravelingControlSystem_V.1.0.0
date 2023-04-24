@@ -1,30 +1,15 @@
 <?php
-//Verificacion de sesion en cuenta
-	session_start();
 
-	if(!isset($_SESSION['id'])){
-		
-		echo '
-		<script>
-			alert("inicie sesion");
-			window.location = "../../../login/php/index.php";
-		</script>
-		';
-
-		
-		session_destroy();
-		die();
-	};
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" type="image/png" href="../../../logo/logo-sin-fondo.ico"/>
-    <title>Levantar Reporte</title>
-    <link rel="stylesheet" href="main.css">
+	<meta charset="utf-8">
+	<meta name="viewport" conte="widt=device-widt, initial-scale=1.0">
+	<meta http-equiv="x-ua-compatible" content="ie-edge">
+	<title>registro fiscales</title>
+	<link rel="stylesheet"  href="style.css">
 </head>
 
 <body>
@@ -34,8 +19,8 @@
             <a href="#"><img class="logo" src="" alt="logo"></a>
 
             <ul class="enlaces-menu">
-                <li><a href="../../planilla_actividad/php/planilla_actividad.php">Planilla actividad</a></li>
-                <li><a href="#">Reportes</a></li>
+                <li><a href="#">Levantar Reporte</a></li>
+                <li><a href="../../reporte/php/reporte.php">Reportes</a></li>
                 <li><a href="../../../BBDD/cierre_sesion.php">cerrar sesion</a></li>
             </ul>
 
@@ -48,8 +33,8 @@
     </header>
 	<!--FIN MENU -->
 
-    <!--REPORTE-->
 	
+
 	<form class="form-register" action="../../../BBDD/reporte.php" method="POST">
 		<h4>Reportes</h4>
 		<input class="controls" type="text" name="nombres" id="nombre" placeholder="Nombre y apellido">
@@ -59,10 +44,8 @@
 		
 			<input class="botons" type="submit" name="registrar">
 	</form>
-	<!--FIN DE REPORTE-->
 
-    <!--JAVASCRIPT-->
-    <script src="main.js"></script>
-	<!--fin-->
+	<!--JAVASCRIPT-->
+	<script src="main.js"></script>
 </body>
 </html>

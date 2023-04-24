@@ -14,7 +14,7 @@
     if($ejecutar){
         echo '
             <script>
-                alert("usuario registrado correctamente");
+                alert("Datos enviados correctamente");
                 window.location = "../fiscal/planilla_actividad/php/planilla_actividad.php";
             </script>
         ';
