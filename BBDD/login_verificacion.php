@@ -9,7 +9,7 @@
 		$id = $_POST['id'];
 		$password = $_POST['password'];
 		
-		$sql = "SELECT id, password, tipo_usuario, nombre, apellido FROM usuarios WHERE id='$id'";
+		$sql = "SELECT id, password, tipo_usuario, nombre, apellido FROM usuarios WHERE id='$id' ";
 		
 		$resultado = $mysqli->query($sql);
 		$num = $resultado->num_rows;

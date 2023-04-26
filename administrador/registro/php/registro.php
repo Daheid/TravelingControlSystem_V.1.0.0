@@ -1,20 +1,6 @@
 <?php
 //Verificacion de sesion en cuenta
-	session_start();
 
-	if(!isset($_SESSION['id'])){
-		
-		echo '
-		<script>
-			alert("inicie sesion");
-			window.location = "../../../login/php/index.php";
-		</script>
-		';
-
-		
-		session_destroy();
-		die();
-	};
 ?>
 
 <!DOCTYPE html>
@@ -36,7 +22,7 @@
             <ul class="enlaces-menu">
                 <li><a href="../../registro_encavas/php/registro_encava.php">Registro de encava</a></li>
                 <li><a href="../../reporte/php/reporte.php">Reportes</a></li>
-				<li><a href="">Planilla de actividad</a></li>
+				<li><a href="../../planilla_actividad/php/planilla_actividad.php">Planilla de actividad</a></li>
 				<li><a href="../../usuarios/php/usuarios.php">Usuarios</a></li>
 				<li><a href="../../encavas/php/encavas.php">Encavas</a></li>
                 <li><a href="../../../BBDD/cierre_sesion.php">cerrar sesion</a></li>
@@ -60,7 +46,6 @@
 			<input class="controls" type="text" name="apellido" id="apellido" placeholder="Apellido completo" required>
 			<input class="controls" type="number" name="cedula" id="cedula" placeholder="Documento de identidad" required>
 			<input class="controls" type="number" name="telefono" id="telefono" placeholder="Numero celular" required>
-			<input class="controls" type="text" name="parada" id="parada" placeholder="Parada seleccionada" required>
 			<input class="controls" type="email" name="email" id="email" placeholder="Correo electronico" required>
 			<input class="controls" type="password" name="password" id="password" placeholder="Contraseña" required>
 			<input class="controls" type="text" name="id" id="id" placeholder="ID" required>

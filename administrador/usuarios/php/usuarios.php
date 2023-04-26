@@ -1,12 +1,8 @@
 <?php
     include("../../../BBDD/conexion_BBDD.php");
 
-    $usuarios = "SELECT * FROM usuarios";
-
     //Verificacion de sesion en cuenta
     session_start();
-
-    include("../../../BBDD/conexion_BBDD.php");
 
     $usuarios = "SELECT * FROM usuarios";
 
@@ -23,10 +19,14 @@
             </script>
         ';
 
-
         session_destroy();
         die();
     };
+
+
+    $usuarios = "SELECT * FROM usuarios";
+
+    
 ?>
 
 <!DOCTYPE html>
@@ -50,7 +50,7 @@
                 <li><a href="../../registro/php/registro.php">Registro de usuarios</a></li>
                 <li><a href="../../registro_encavas/php/registro_encava.php">Registro de encava</a></li>
                 <li><a href="../../reporte/php/reporte.php">Reportes</a></li>
-				<li><a href="">Planilla de actividad</a></li>
+				<li><a href="../../planilla_actividad/php/planilla_actividad.php">Planilla de actividad</a></li>
 				<li><a href="../../encavas/php/encavas.php">Encavas</a></li>
                 <li><a href="../../../BBDD/cierre_sesion.php">cerrar sesion</a></li>
             </ul>
@@ -71,7 +71,6 @@
         <div class="table__header">id</div>
         <div class="table__header">cedula</div>
         <div class="table__header">telefono</div>
-        <div class="table__header">parada</div>
         <div class="table__header">email</div>
         <div class="table__header">nombre</div>
         <div class="table__header">apellido</div>
@@ -86,7 +85,6 @@
         <div class="table__item"><?php echo $row['id'];?></div>
         <div class="table__item"><?php echo $row['cedula'];?></div>
         <div class="table__item"><?php echo $row['telefono'];?></div>
-        <div class="table__item"><?php echo $row['parada'];?></div>
         <div class="table__item"><?php echo $row['email'];?></div>
         <div class="table__item"><?php echo $row['nombre'];?></div>
         <div class="table__item"><?php echo $row['apellido'];?></div>

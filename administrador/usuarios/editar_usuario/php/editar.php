@@ -1,13 +1,8 @@
 <?php
     include("../../../../BBDD/conexion_BBDD.php");
 
-    $id = $_GET['id'];
-    $usuarios = "SELECT * FROM usuarios where id='$id'";
-
     //Verificacion de sesion en cuenta
     session_start();
-
-    include("../../../BBDD/conexion_BBDD.php");
 
     $usuarios = "SELECT * FROM usuarios";
 
@@ -28,6 +23,11 @@
         session_destroy();
         die();
     };
+
+
+    $id = $_GET['id'];
+    $usuarios = "SELECT * FROM usuarios where id='$id'";
+
 ?>
 
 <!DOCTYPE html>
@@ -46,7 +46,6 @@
         <div class="table__header">id</div>
         <div class="table__header">cedula</div>
         <div class="table__header">telefono</div>
-        <div class="table__header">parada</div>
         <div class="table__header">email</div>
         <div class="table__header">nombre</div>
         <div class="table__header">apellido</div>
@@ -61,14 +60,13 @@
         <input type="text" name="id" value="<?php echo $row['id'];?>" class="table__item"></input>
         <input type="text" name="cedula" value="<?php echo $row['cedula'];?>" class="table__item"></input>
         <input type="text" name="telefono" value="<?php echo $row['telefono'];?>" class="table__item"></input>
-        <input type="text" name="parada" value="<?php echo $row['parada'];?>" class="table__item"></input>
         <input type="text" name="email" value="<?php echo $row['email'];?>" class="table__item"></input>
         <input type="text" name="nombre" value="<?php echo $row['nombre'];?>" class="table__item"></input>
         <input type="text" name="apellido" value="<?php echo $row['apellido'];?>" class="table__item"></input>
 
-        <input type="hidden" name="tipo_usuario" value="<?php echo $row['apellido'];?>" class="table__item"></input>
+        <input type="hidden" name="tipo_usuario" value="<?php echo $row['tipo_usuario'];?>" class="table__item"></input>
 
-        <input type="hidden" name="password" value="<?php echo $row['apellido'];?>" class="table__item"></input>
+        <input type="hidden" name="password" value="<?php echo $row['password'];?>" class="table__item"></input>
 
             
         <?php };  

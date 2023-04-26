@@ -1,9 +1,6 @@
 <?php
     include("../../../BBDD/conexion_BBDD.php");
 
-    $usuarios = "SELECT * FROM planilla_actividad";
-
-
     //Verificacion de sesion en cuenta
     session_start();
 
@@ -23,11 +20,19 @@
             window.location = "../../../login/php/index.php";
             </script>
         ';
-
-
+        
         session_destroy();
         die();
     };
+
+
+
+
+
+    $usuarios = "SELECT * FROM planilla_actividad";
+
+
+    
 ?>
 
 <!DOCTYPE html>

@@ -11,14 +11,14 @@ body {
     box-shadow: 0 0 20px #333;
 
     display: grid;
-    grid-template-columns: repeat(8, 0.6fr);
+    grid-template-columns: repeat(7, 1fr);
     grid-auto-rows: 30px;
     position: relative;
 }
 
 .table__title{
     grid-column-start: 1;
-    grid-column-end: 9;
+    grid-column-end: 8;
 
     background: rgba(40, 65, 120, 1);
     color: white;

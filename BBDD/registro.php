@@ -6,14 +6,16 @@
     $apellido = $_POST['apellido'];
     $cedula = $_POST['cedula'];
     $telefono= $_POST['telefono'];
-    $parada = $_POST['parada'];
     $email = $_POST['email'];
     $password = $_POST['password'];
     $id = $_POST['id'];
     $tipo_usuario = $_POST['tipo_usuario'];
+    
     $password_db = sha1($password);
 
-    $query = "INSERT INTO usuarios(id, password, tipo_usuario, cedula, telefono, parada, email, nombre, apellido) VALUES ('$id','$password_db','$tipo_usuario','$cedula','$telefono','$parada','$email','$nombre','$apellido')";
+    $query = "INSERT INTO usuarios(id, password, tipo_usuario, cedula, telefono, email, nombre, apellido) VALUES ('$id','$password_db','$tipo_usuario','$cedula','$telefono','$email','$nombre','$apellido')";
+
+    
 
     //Verificacion de cedula
 

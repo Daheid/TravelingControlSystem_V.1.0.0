@@ -36,7 +36,7 @@
             <ul class="enlaces-menu">
                 <li><a href="../../registro/php/registro.php">Registro de Usuarios</a></li>
                 <li><a href="../../reporte/php/reporte.php">Reportes</a></li>
-				<li><a href="">Planilla de actividad</a></li>
+				<li><a href="../../planilla_actividad/php/planilla_actividad.php">Planilla de actividad</a></li>
 				<li><a href="../../usuarios/php/usuarios.php">Usuarios</a></li>
 				<li><a href="../../encavas/php/encavas.php">Encavas</a></li>
                 <li><a href="../../../BBDD/cierre_sesion.php">cerrar sesion</a></li>

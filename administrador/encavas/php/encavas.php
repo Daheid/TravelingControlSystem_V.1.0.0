@@ -1,12 +1,8 @@
 <?php
     include("../../../BBDD/conexion_BBDD.php");
-
-    $encavas = "SELECT * FROM encavas";
     
     //Verificacion de sesion en cuenta
     session_start();
-
-    include("../../../BBDD/conexion_BBDD.php");
 
     $usuarios = "SELECT * FROM usuarios";
 
@@ -27,6 +23,8 @@
         session_destroy();
         die();
     };
+
+    $encavas = "SELECT * FROM encavas";
 ?>
 
 <!DOCTYPE html>
@@ -49,7 +47,7 @@
                 <li><a href="../../registro/php/registro.php">Registro de usuarios</a></li>
                 <li><a href="../../registro_encavas/php/registro_encava.php">Registro de encava</a></li>
                 <li><a href="../../reporte/php/reporte.php">Reportes</a></li>
-				<li><a href="">Planilla de actividad</a></li>
+				<li><a href="../../planilla_actividad/php/planilla_actividad.php">Planilla de actividad</a></li>
 				<li><a href="../../usuarios/php/usuarios.php">usuarios</a></li>
                 <li><a href="../../../BBDD/cierre_sesion.php">cerrar sesion</a></li>
             </ul>
@@ -66,7 +64,7 @@
 
 
     <div class="container-table">
-        <div class="table__title"> Datos de Encavas</div>
+        <div class="table__title">Datos de Encavas</div>
         <div class="table__header">Numero de encava</div>
         <div class="table__header">Placa de encava</div>
         <div class="table__header">Dueño de la encava</div>
@@ -84,8 +82,8 @@
         <div class="table__item"><?php echo $row['dueno'];?></div>
 
         <div class="table__item">
-            <a href="../editar_encava/php/editar.php?id=<?php echo $row['numero'];?>" class="table__item__link">Editar| </a> 
-            <a href="../eliminar_encava/php/eliminar.php?id=<?php echo $row['numero'];?>" class="table__item__link"> Eliminar</a>
+            <a href="../editar_encava/php/editar.php?numero=<?php echo $row['numero'];?>" class="table__item__link">Editar| </a> 
+            <a href="../eliminar_encava/php/eliminar.php?numero=<?php echo $row['numero'];?>" class="table__item__link"> Eliminar</a>
             
 
         </div>

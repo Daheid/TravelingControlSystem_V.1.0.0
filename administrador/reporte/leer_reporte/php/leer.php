@@ -1,13 +1,9 @@
 <?php
     include("../../../../BBDD/conexion_BBDD.php");
 
-    $id = $_GET['id'];
-    $usuarios = "SELECT * FROM reportes where id='$id'";
-
     //Verificacion de sesion en cuenta
     session_start();
 
-    include("../../../../BBDD/conexion_BBDD.php");
 
     $usuarios = "SELECT * FROM usuarios";
 
@@ -28,6 +24,9 @@
         session_destroy();
         die();
     };
+
+    $id = $_GET['id'];
+    $usuarios = "SELECT * FROM reportes where id='$id'";
 ?>
 
 <!DOCTYPE html>
