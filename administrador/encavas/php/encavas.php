@@ -1,8 +1,8 @@
 <?php
     include("../../../BBDD/conexion_BBDD.php");
 
-    $usuarios = "SELECT * FROM usuarios";
-
+    $encavas = "SELECT * FROM encavas";
+    
     //Verificacion de sesion en cuenta
     session_start();
 
@@ -35,9 +35,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" type="image/png" href="../../../logo/logo-sin-fondo.ico"/>
     <script src="../eliminar_usuario/php/confirmacion.js"></script>
-    <title>Usuarios</title>
+    <title>Encavas</title>
 </head>
 <body>
 
@@ -51,7 +50,7 @@
                 <li><a href="../../registro_encavas/php/registro_encava.php">Registro de encava</a></li>
                 <li><a href="../../reporte/php/reporte.php">Reportes</a></li>
 				<li><a href="">Planilla de actividad</a></li>
-				<li><a href="../../encavas/php/encavas.php">Encavas</a></li>
+				<li><a href="../../usuarios/php/usuarios.php">usuarios</a></li>
                 <li><a href="../../../BBDD/cierre_sesion.php">cerrar sesion</a></li>
             </ul>
 
@@ -67,32 +66,26 @@
 
 
     <div class="container-table">
-        <div class="table__title"> Datos de usuario</div>
-        <div class="table__header">id</div>
-        <div class="table__header">cedula</div>
-        <div class="table__header">telefono</div>
-        <div class="table__header">parada</div>
-        <div class="table__header">email</div>
-        <div class="table__header">nombre</div>
-        <div class="table__header">apellido</div>
+        <div class="table__title"> Datos de Encavas</div>
+        <div class="table__header">Numero de encava</div>
+        <div class="table__header">Placa de encava</div>
+        <div class="table__header">Dueño de la encava</div>
+
         <div class="table__header">Edicion</div>
         
         <?php 
-            $resultado = mysqli_query($mysqli, $usuarios); 
+            $resultado = mysqli_query($mysqli, $encavas); 
             
             while($row = mysqli_fetch_assoc($resultado)){
         ?>
 
-        <div class="table__item"><?php echo $row['id'];?></div>
-        <div class="table__item"><?php echo $row['cedula'];?></div>
-        <div class="table__item"><?php echo $row['telefono'];?></div>
-        <div class="table__item"><?php echo $row['parada'];?></div>
-        <div class="table__item"><?php echo $row['email'];?></div>
-        <div class="table__item"><?php echo $row['nombre'];?></div>
-        <div class="table__item"><?php echo $row['apellido'];?></div>
+        <div class="table__item"><?php echo $row['numero'];?></div>
+        <div class="table__item"><?php echo $row['placa'];?></div>
+        <div class="table__item"><?php echo $row['dueno'];?></div>
+
         <div class="table__item">
-            <a href="../editar_usuario/php/editar.php?id=<?php echo $row['id'];?>" class="table__item__link">Editar| </a> 
-            <a href="../eliminar_usuario/php/eliminar.php?id=<?php echo $row['id'];?>" class="table__item__link"> Eliminar</a>
+            <a href="../editar_encava/php/editar.php?id=<?php echo $row['numero'];?>" class="table__item__link">Editar| </a> 
+            <a href="../eliminar_encava/php/eliminar.php?id=<?php echo $row['numero'];?>" class="table__item__link"> Eliminar</a>
             
 
         </div>

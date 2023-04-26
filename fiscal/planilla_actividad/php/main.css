@@ -20,12 +20,9 @@ html {
     background-size: cover;
   }
 
-  body::-webkit-scrollbar {
-    
-  }
   
   .logo{
-    width: 120px;
+    width: 25px;
     height: 25px;  
   }
 

@@ -31,7 +31,7 @@
     <!--Menu-->
     <header> 
         <nav>
-            <a href="#"><img class="logo" src="" alt="logo"></a>
+            <a href="#"><img class="logo" src="../../../logo/logo-sin-fondo.jpeg" alt="logo"></a>
 
             <ul class="enlaces-menu">
                 <li><a href="#">Planilla actividad</a></li>

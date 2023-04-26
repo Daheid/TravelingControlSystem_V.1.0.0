@@ -18,11 +18,31 @@
     //Verificacion de cedula
 
     $cedulaV = mysqli_query($mysqli, "SELECT * FROM usuarios WHERE cedula='$cedula'");
+    $correoV = mysqli_query($mysqli, "SELECT * FROM usuarios WHERE email='$email'");
+    $idV = mysqli_query($mysqli, "SELECT * FROM usuarios WHERE id='$id'");
 
     if(mysqli_num_rows($cedulaV) > 0){
         echo '
             <script>
                 alert("Esta cedula ya le pertenece a un usuario diferente.");
+                window.location = "../administrador/registro/php/registro.php";
+            </script>
+        ';
+    }
+
+    if(mysqli_num_rows($correoV) > 0){
+        echo '
+            <script>
+                alert("Esta correo ya le pertenece a un usuario diferente.");
+                window.location = "../administrador/registro/php/registro.php";
+            </script>
+        ';
+    }
+
+    if(mysqli_num_rows($idV) > 0){
+        echo '
+            <script>
+                alert("Este ID ya le pertenece a un usuario diferente.");
                 window.location = "../administrador/registro/php/registro.php";
             </script>
         ';

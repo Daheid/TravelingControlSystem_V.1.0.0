@@ -1,7 +1,8 @@
 <?php
     include("../../../BBDD/conexion_BBDD.php");
 
-    $usuarios = "SELECT * FROM usuarios";
+    $usuarios = "SELECT * FROM planilla_actividad";
+
 
     //Verificacion de sesion en cuenta
     session_start();
@@ -37,7 +38,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" type="image/png" href="../../../logo/logo-sin-fondo.ico"/>
     <script src="../eliminar_usuario/php/confirmacion.js"></script>
-    <title>Usuarios</title>
+    <title>planilla de actividad</title>
 </head>
 <body>
 
@@ -50,7 +51,7 @@
                 <li><a href="../../registro/php/registro.php">Registro de usuarios</a></li>
                 <li><a href="../../registro_encavas/php/registro_encava.php">Registro de encava</a></li>
                 <li><a href="../../reporte/php/reporte.php">Reportes</a></li>
-				<li><a href="">Planilla de actividad</a></li>
+                <li><a href="../../usuarios/php/usuarios.php">usuarios</a></li>
 				<li><a href="../../encavas/php/encavas.php">Encavas</a></li>
                 <li><a href="../../../BBDD/cierre_sesion.php">cerrar sesion</a></li>
             </ul>
@@ -67,15 +68,13 @@
 
 
     <div class="container-table">
-        <div class="table__title"> Datos de usuario</div>
-        <div class="table__header">id</div>
-        <div class="table__header">cedula</div>
-        <div class="table__header">telefono</div>
-        <div class="table__header">parada</div>
-        <div class="table__header">email</div>
-        <div class="table__header">nombre</div>
-        <div class="table__header">apellido</div>
-        <div class="table__header">Edicion</div>
+        <div class="table__title"> Reportes de fiscales</div>
+        <div class="table__header">unidad</div>
+        <div class="table__header">Parada</div>
+        <div class="table__header">Destino</div>
+        <div class="table__header">Hora</div>
+        <div class="table__header">Accion</div>
+
         
         <?php 
             $resultado = mysqli_query($mysqli, $usuarios); 
@@ -83,16 +82,16 @@
             while($row = mysqli_fetch_assoc($resultado)){
         ?>
 
-        <div class="table__item"><?php echo $row['id'];?></div>
-        <div class="table__item"><?php echo $row['cedula'];?></div>
-        <div class="table__item"><?php echo $row['telefono'];?></div>
+        <div class="table__item"><?php echo $row['unidad'];?></div>
         <div class="table__item"><?php echo $row['parada'];?></div>
-        <div class="table__item"><?php echo $row['email'];?></div>
-        <div class="table__item"><?php echo $row['nombre'];?></div>
-        <div class="table__item"><?php echo $row['apellido'];?></div>
+        <div class="table__item"><?php echo $row['destino'];?></div>
+        <div class="table__item"><?php echo $row['hora'];?></div>
+
+
+
         <div class="table__item">
-            <a href="../editar_usuario/php/editar.php?id=<?php echo $row['id'];?>" class="table__item__link">Editar| </a> 
-            <a href="../eliminar_usuario/php/eliminar.php?id=<?php echo $row['id'];?>" class="table__item__link"> Eliminar</a>
+
+            <a href="../eliminar_planilla/php/eliminar.php?unidad=<?php echo $row['unidad'];?>" class="table__item__link"> Eliminar</a>
             
 
         </div>

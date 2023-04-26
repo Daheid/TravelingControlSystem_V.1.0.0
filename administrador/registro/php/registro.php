@@ -1,49 +1,85 @@
 <?php
 //Verificacion de sesion en cuenta
-session_start();
-if(!isset($_SESSION['id'])){
-	
-	echo '
-	<script>
-		alert("inicie sesion");
-		window.location = "../../../login/php/index.php";
-	</script>
-	';
+	session_start();
 
-	
-	session_destroy();
-	die();
-};
+	if(!isset($_SESSION['id'])){
+		
+		echo '
+		<script>
+			alert("inicie sesion");
+			window.location = "../../../login/php/index.php";
+		</script>
+		';
 
+		
+		session_destroy();
+		die();
+	};
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" conte="widt=device-widt, initial-scale=1.0">
-	<meta http-equiv="x-ua-compatible" content="ie-edge">
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<title>registro fiscales</title>
-</head>
-<body>
-<form class="form-register" action="../../../BBDD/registro.php" method="POST">
-	<h4>Registro</h4>
 
-	<input class="controls" type="text" name="nombre" id="nombre" placeholder="Nombre compelto" required="">
-	<input class="controls" type="text" name="apellido" id="apellido" placeholder="Apellido completo" required="">
-	<input class="controls" type="text" name="cedula" placeholder="Cedula" required="">
-	<input class="controls" type="text" name="telefono" placeholder="Telefono" required="">
-	<input class="controls" type="text" name="parada" placeholder="Parada" required="">
-	<input class="controls" type="email" name="email" placeholder="Email" required="">
-	<input class="controls" type="text" name="id" placeholder="ID" required="">
-	<input class="controls" type="password" name="password" placeholder="Contraseña" required="">
-	<select name="tipo_usuario" id="">
-		<option value="">Selecione el tipo de usuario</option>
-		<option value="1">Administrador</option>
-		<option value="2">Fiscal</option>
-	</select>
-	<input class="botons" type="submit" name="registrar">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="../../../logo/logo-sin-fondo.ico"/>
+    <title>Registro de usuarios</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <!--Menu-->
+    <header> 
+        <nav>
+            <a href="#"><img class="logo" src="../../../logo/logo-sin-fondo.jpeg" alt="logo"></a>
+
+            <ul class="enlaces-menu">
+                <li><a href="../../registro_encavas/php/registro_encava.php">Registro de encava</a></li>
+                <li><a href="../../reporte/php/reporte.php">Reportes</a></li>
+				<li><a href="">Planilla de actividad</a></li>
+				<li><a href="../../usuarios/php/usuarios.php">Usuarios</a></li>
+				<li><a href="../../encavas/php/encavas.php">Encavas</a></li>
+                <li><a href="../../../BBDD/cierre_sesion.php">cerrar sesion</a></li>
+            </ul>
+
+            <button class="ham" type="button">   
+                <span class="br-1"></span>
+                <span class="br-2"></span>
+                <span class="br-3"></span>
+            </button>                       
+        </nav>
+    </header>
+	<!--FIN MENU -->
+
+    <!--Planilla actividad-->
+
+		<form id="formulario" class="form-register" action="../../../BBDD/registro.php" method="POST">
+			<h4>Registro de usuarios</h4>
+
+			<input class="controls" type="text" name="nombre" id="nombre" placeholder="Nombre completo" required>
+			<input class="controls" type="text" name="apellido" id="apellido" placeholder="Apellido completo" required>
+			<input class="controls" type="number" name="cedula" id="cedula" placeholder="Documento de identidad" required>
+			<input class="controls" type="number" name="telefono" id="telefono" placeholder="Numero celular" required>
+			<input class="controls" type="text" name="parada" id="parada" placeholder="Parada seleccionada" required>
+			<input class="controls" type="email" name="email" id="email" placeholder="Correo electronico" required>
+			<input class="controls" type="password" name="password" id="password" placeholder="Contraseña" required>
+			<input class="controls" type="text" name="id" id="id" placeholder="ID" required>
+
+
+			<select id="tipo_usuario" name="tipo_usuario" class="controls"> 
+				<option value="0">Seleccionar tipo de usuario</option>
+				<option value="1">Administrador</option>
+				<option value="2">Fiscal</option>
+			</select>
+			
+			<!--Boton de enviar-->
+			<input class="botons" type="submit" name="registrar" onclick="actualizarFechaHora()" class="btn-blue custom-btn" value="Enviar">
+		</form>
+
+	<!--FIN DE REGISTRO DE USUARIOS-->
 	
-</form>
+    <!--JAVASCRIPT-->
+    <script src="main.js"></script>
+	<!--fin-->
 </body>
 </html>
